@@ -32,3 +32,42 @@ This design is typically used in digital circuits where a sequence of bits needs
 
 ![Screenshot 2024-03-06 220653](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/6940fa01-9168-4512-8f3a-1fa4f6d18009)
 
+## HLS Register
+
+The HLS function HLS_reg is defined with two parameters: a single bit data input and a 5-bit unsigned integer n output passed by reference. The design uses the ap_uint<5> data type to define a 5-bit wide register. In HLS, ap_uint is a datatype provided by Xilinx libraries for arbitrary precision arithmetic, which in this case, allows us to define the width of our integer at 5 bits specifically.
+
+
+The #pragma HLS INTERFACE directives are used to specify the interface configuration for the ports. Setting ap_ctrl_none for the return port indicates that the block does not use the default control signals (start, done, idle). This means that the function will continuously run and process data without needing to be explicitly started or stopped. The ports data and n are configured with ap_none, suggesting they are simple connections without any sideband signals or protocol.
+
+
+The #pragma HLS PIPELINE directive with an initiation interval (II) of 1 tells the HLS tool to attempt to pipeline this function such that it can accept new input data every clock cycle, effectively allowing for parallel processing and increasing throughput.
+
+
+Inside the function, there's a static 5-bit register reg which initially holds the value 0b00000. Each time the function is invoked, the register contents are shifted right by one bit, and the data input is placed into the most significant bit (reg[4]). The updated value of reg is then assigned to the output n.
+
+
+From the attached screenshots, we can observe that:
+
+
+The csim.log file indicates that the C simulation has been run successfully with no errors, implying functional correctness of the design at the C level.
+
+The timing estimate does not show any issues, with a target and estimated timing of 10 ns and an uncertainty of 2.70 ns.
+
+The synthesis report indicates that the design meets the timing requirements with no latency or iterations, and it is set up for pipelining.
+
+The co-simulation report confirms that the RTL simulation passes, ensuring that the synthesized design behaves as expected when compared to the C model.
+
+The waveform depicts the behavior of the data input and the n output over time, confirming the shift register operation where each bit in n is shifted in each clock cycle, and the input data is placed into the most significant bit position.
+
+This design would typically be used in scenarios where a sequence of bits needs to be captured and shifted in time, such as in serial communication interfaces or for temporary storage and manipulation of bits within a larger digital system. The shift register's ability to operate every clock cycle maximizes the data handling efficiency, which is essential for high-performance FPGA applications.
+
+![Screenshot 2024-03-07 143859](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/2dafc91a-19c3-45d6-a0b5-ccb228ea9e2f)
+
+![Screenshot 2024-03-07 144217](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/4e9542b9-8f51-4e93-bfb8-b0065a0b2a4f)
+
+![Screenshot 2024-03-07 152145](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/7d8334cb-a2aa-4200-bbec-80732a2a95f4)
+
+![Screenshot 2024-03-07 152629](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/767f9caf-a8fb-4666-bf2e-4d1cf9749efd)
+
+
+
