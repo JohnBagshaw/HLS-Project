@@ -69,5 +69,67 @@ This design would typically be used in scenarios where a sequence of bits needs 
 
 ![Screenshot 2024-03-07 152629](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/767f9caf-a8fb-4666-bf2e-4d1cf9749efd)
 
+# HLS FPGA design rotate-with-load module
+A common function in cryptographic algorithms and data manipulation tasks. The project encompasses the full HLS design flow including C simulation, synthesis, schedule viewing, co-simulation, and RTL waveform simulation.
+
+
+Design Specification
+The provided HLS code implements a rotate-with-load function. The function takes a data_in input, which is conditionally loaded into a register rotate_reg when the load signal is high. Upon a high rotate signal, the rotate_reg is right-rotated by one position, with the output provided in data_out. The use of the ap_uint<W> data type suggests a templated width, providing flexibility for different data widths.
+
+
+HLS Pragmas and Interface Configuration
+Several HLS interface pragmas are declared for the function arguments, optimizing the design's control and data flow:
+
+
+ap_ctrl_none: Disables automatic control signals, providing full control over the execution.
+
+ap_none: Specifies that the ports will have no handshaking signals, simplifying the interface.
+
+PIPELINE II=1: Enables full pipelining with an initiation interval of 1, maximizing throughput.
+
+Design Flow
+
+1. C Simulation (csimulation): The initial stage involves verifying the functional correctness of the HLS code. The console output indicates that the C simulation was successfully completed with no errors, demonstrating functional correctness of the HLS code under testbench conditions.
+
+
+2. Synthesis: The synthesis summary shows that the design targets a 5 ns clock period, achieving an estimated 2.637 ns timing, which is well within the target. The synthesis reports no timing violations, suggesting an efficient translation of the HLS code to RTL.
+
+
+3. Schedule Viewer: The viewer provides a graphical representation of the operation schedule. The data suggests that operations are tightly packed with no evident pipeline stalls or wasted clock cycles, indicative of an efficient HLS scheduling result.
+
+
+4. Co-Simulation Report: The co-simulation integrates the RTL simulation with the C model, ensuring the RTL implementation functions as intended. The console output indicates all simulation runs passed with no errors, showcasing the RTL's fidelity to the original HLS design.
+
+
+5. RTL Simulation Waveform: The waveform visualization confirms the expected operation of the design. Signals load and rotate control the behavior of the rotate_reg, as seen by the changes in data_out, which align with the specified behavior.
+
+
+
+Performance and Resource Utilization:
+
+
+The synthesis report highlights the efficient use of FPGA resources, with only 18 flip-flops (FFs) and 53 look-up tables (LUTs) used, and no block RAM (BRAM) or DSP slices consumed.
+The design is pipelined, which is reflected in the timing estimate and schedule viewer results, indicating high throughput capability.
+
+Functional Behavior:
+
+The waveforms corroborate the expected functional behavior, with the rotate_reg correctly loading and rotating based on the control signals.
+
+Challenges and Improvements:
+
+The static nature of rotate_reg as a single-bit shift might limit the function's flexibility. Future improvements could include parameterizing the shift amount for varying rotate operations.
+No clear error handling or corner-case consideration is present in the code. Robustness could be improved with the addition of error detection and management logic.
+
+The HLS-based FPGA design for a rotate-with-load function exhibits a promising blend of high performance, functional correctness, and efficient resource utilization. The design flow from csimulation to RTL waveform analysis showcases the effectiveness of HLS in streamlining FPGA design, delivering rapid prototyping capabilities while maintaining high-quality synthesis results. With further optimization and robustness features, the design could be well-suited for demanding applications that require dynamic data manipulation with high throughput requirements.
+
+![Screenshot 2024-03-07 170552](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/fab8cf29-a4dc-41b3-820c-69618f1b1041)
+
+![Screenshot 2024-03-07 171620](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/b5757315-4a7c-4910-89a9-d2b543c7d530)
+
+![Screenshot 2024-03-07 171801](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/604539d3-a8c1-44c3-98de-0b005249ca7c)
+
+![Screenshot 2024-03-07 172640](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/61ffa7d3-b536-4172-84d5-da72f2835fc0)
+
+![Screenshot 2024-03-07 173132](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/80245e6d-0e2b-4dae-9882-61e1926fd89c)
 
 
