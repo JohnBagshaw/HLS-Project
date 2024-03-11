@@ -69,15 +69,17 @@ This design would typically be used in scenarios where a sequence of bits needs 
 
 ![Screenshot 2024-03-07 152629](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/767f9caf-a8fb-4666-bf2e-4d1cf9749efd)
 
-# HLS FPGA design rotate-with-load module
+# HLS FPGA Design Rotate-With-Load Module:
 A common function in cryptographic algorithms and data manipulation tasks. The project encompasses the full HLS design flow including C simulation, synthesis, schedule viewing, co-simulation, and RTL waveform simulation.
 
 
 Design Specification
+
 The provided HLS code implements a rotate-with-load function. The function takes a data_in input, which is conditionally loaded into a register rotate_reg when the load signal is high. Upon a high rotate signal, the rotate_reg is right-rotated by one position, with the output provided in data_out. The use of the ap_uint<W> data type suggests a templated width, providing flexibility for different data widths.
 
 
 HLS Pragmas and Interface Configuration
+
 Several HLS interface pragmas are declared for the function arguments, optimizing the design's control and data flow:
 
 
