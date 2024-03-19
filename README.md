@@ -134,7 +134,7 @@ The HLS-based FPGA design for a rotate-with-load function exhibits a promising b
 
 ![Screenshot 2024-03-07 173132](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/80245e6d-0e2b-4dae-9882-61e1926fd89c)
 
-## HLS-based QAM Module for Wireless Communication Application
+## HLS-based QAM Module for Wireless Communication Application (Corresponding RTL Verilog HDL files are included)
 
 lms_equalizer: Implements the LMS equalizer module that updates the filter coefficients based on the error signal (difference between desired output and actual output) using the LMS algorithm. It also updates the input sample delay line to prepare for the next iteration.
 
