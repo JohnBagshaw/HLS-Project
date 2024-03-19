@@ -134,7 +134,7 @@ The HLS-based FPGA design for a rotate-with-load function exhibits a promising b
 
 ![Screenshot 2024-03-07 173132](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/80245e6d-0e2b-4dae-9882-61e1926fd89c)
 
-# HLS-based QAM Module for Wireless Communication Application
+## HLS-based QAM Module for Wireless Communication Application
 
 lms_equalizer: Implements the LMS equalizer module that updates the filter coefficients based on the error signal (difference between desired output and actual output) using the LMS algorithm. It also updates the input sample delay line to prepare for the next iteration.
 
@@ -154,26 +154,31 @@ Here's an overview of the design process:
 
 System Specification:
 
-The requirements of the QAM system including the modulation scheme (e.g., QAM-16, QAM-64), bandwidth, data rate, signal-to-noise ratio (SNR) requirements, and any specific application constraints.
+The requirements of the QAM system are reviewed including the modulation scheme (e.g., QAM-16, QAM-64), bandwidth, data rate, signal-to-noise ratio (SNR) requirements, and any specific application constraints.
+
 Modulation and Demodulation:
 
 
 For QAM modulation, I mapped the input data bits onto a complex constellation, such as symbols in the I-Q plane.
 For demodulation, I implemented algorithms to estimate the transmitted symbols based on received signals and perform symbol detection.
+
 Transmit Filter:
 
 Design and implement a transmit filter to shape the transmitted signal spectrum and meet regulatory requirements.
 Finite Impulse Response (FIR) is used to design the transmit filter.
 Filter coefficients are optimized to achieve desired spectral characteristics while minimizing implementation complexity.
+
 Receive Filter:
 
 A receive filter is designed and implemented to mitigate noise and interference and improve signal-to-noise ratio (SNR) at the receiver.
 Adaptive filtering techniques such as Least Mean Squares (LMS) or Decision Feedback Equalization (DFE) is used for adaptive equalization in the receive filter.
+
 Equalization:
 
 An equalizer is implemented to compensate for channel distortion and improve signal quality.
 Adaptive equalization techniques such as Decision Feedback Equalization (DFE) or Maximum Likelihood Sequence Estimation (MLSE) can be employed.
 Channel effects such as multipath propagation, phase distortion, and frequency-selective fading are estimated and compensated for.
+
 ![Screenshot 2024-03-16 102102](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/5b690f66-c979-4c3d-aab3-806ccd312eae)
 ![Screenshot 2024-03-15 165557](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/2296d916-c60f-422d-87e0-6b9a2fedbbd8)
 ![Screenshot 2024-03-15 170955](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/1166ed96-4f78-4300-81a7-74f52b3b95ac)
