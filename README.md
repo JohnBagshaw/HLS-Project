@@ -1,5 +1,26 @@
 # HLS-Project
 
+## HLS-based IIR Filter
+
+In the realm of FPGA (Field-Programmable Gate Array) design, the efficient implementation of digital signal processing (DSP) algorithms is a critical aspect. Among these algorithms, IIR (Infinite Impulse Response) filters stand out for their versatility and effectiveness in a wide range of applications. 
+
+The code represents a second-order IIR filter implementation. Here's a breakdown of the key components:
+
+Interface Definition: The iir function takes an input x and produces an output y. Both x and y are of type DATA_TYPE, and they are passed by reference (&) to allow modifications.
+
+Interface Directives: The #pragma HLS INTERFACE directives specify the interface properties of the function. In this case, ap_ctrl_hs denotes a high-speed control interface, while ap_none indicates that x and y do not have streaming interfaces.
+
+Pipeline Directive: The #pragma HLS PIPELINE II=2 directive enables pipeline optimization with a pipeline initiation interval (II) of 2, enhancing throughput by allowing two computations to occur concurrently.
+
+The core of the function performs the IIR filtering operation using the provided coefficients (b0, b1, b2, a1, and a2). It maintains internal state variables (xn1, xn2, yn1, and yn2) to store past input and output samples, ensuring correct filter behavior.
+
+![Screenshot 2024-03-18 230544](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/f487523d-2075-4767-81ae-b493268f811c)
+![Screenshot 2024-03-18 232209](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/4eedd797-1640-4d45-8109-6bffe78423f4)
+![Screenshot 2024-03-18 232329](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/3102135c-ab2e-42c1-882b-6924dba1eb0c)
+![Screenshot 2024-03-18 232738](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/59584658-cd72-4729-9054-76607c170def)
+![Screenshot 2024-03-18 234404](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/73ba0539-af2f-435b-9623-f363d779722e)
+
+
 ## HLS-based QAM Module for Wireless Communication Application (Corresponding RTL Verilog HDL files are included)
 
 lms_equalizer: Implements the LMS equalizer module that updates the filter coefficients based on the error signal (difference between desired output and actual output) using the LMS algorithm. It also updates the input sample delay line to prepare for the next iteration.
