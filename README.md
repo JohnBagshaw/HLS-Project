@@ -1,5 +1,44 @@
 # HLS-Project
 
+## High-Level Synthesis (HLS) Based Median Filter for FPGA Applications
+Median filtering is a powerful technique in digital signal processing used for noise reduction and image enhancement. In this report, we delve into the implementation of a median filter using High-Level Synthesis (HLS) targeting FPGA platforms. HLS offers a high-level abstraction for designing complex algorithms and accelerates development by automatically generating hardware descriptions from C/C++ code.
+
+How the Median Filter Works:
+
+
+The med function computes the median of three input values.
+
+The median_filter function applies the median filter to input data in_data.
+
+The filter maintains a sliding window of size 3 to compute the median.
+
+The output out_data is the median value, and out_data_vld indicates valid output.
+
+Key Applications:
+
+
+Image Processing: Median filtering removes salt-and-pepper noise from images while preserving edges.
+
+Signal Processing: Used in audio and biomedical signal processing to remove impulsive noise without blurring the signal.
+
+Digital Communications: Employed for channel equalization in wireless communication systems to mitigate multipath interference effects.
+
+Real-Time Systems: Finds applications in robotics and automotive safety systems due to its simplicity and effectiveness.
+
+![Screenshot 2024-03-19 001828](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/bc38bacb-a87d-4584-b25f-70924f4eb9eb)
+
+![Screenshot 2024-03-19 001547](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/2d1ed7a2-b5cb-4865-a2ef-fec84e0533e2)
+
+![Screenshot 2024-03-19 001351](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/79731a78-c09f-4331-afd0-db5b820bd112)
+
+![Screenshot 2024-03-19 001049](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/d03a0dc1-b722-484a-805b-831ca8d39341)
+
+![Screenshot 2024-03-19 025843](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/7667cc7e-abf8-494d-9cd7-09d8635a218b)
+
+![Screenshot 2024-03-19 002321](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/30b1b497-f196-4918-b210-823130383f47)
+
+
+
 ## HLS-based IIR Filter
 
 In the realm of FPGA (Field-Programmable Gate Array) design, the efficient implementation of digital signal processing (DSP) algorithms is a critical aspect. Among these algorithms, IIR (Infinite Impulse Response) filters stand out for their versatility and effectiveness in a wide range of applications. 
