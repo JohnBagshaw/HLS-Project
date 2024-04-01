@@ -1,5 +1,49 @@
 # HLS-Project
 
+## FPGA-based HLS Timer with Initialization IP Block Design
+
+FPGA-based timers are essential components in various embedded systems, facilitating timekeeping functionalities crucial for a wide range of applications. I recently designed and implemented an FPGA-based HLS timer with initialization IP for a complex DSP project developed using High-Level Synthesis (HLS) methodology.
+
+🗝️Design Overview
+
+The HLS timer with initialization IP consists of the following key components:
+
+✨Debouncer: Ensures stable input signals by eliminating noise and bouncing effects.
+
+✨Pulse Generator: Generates pulse signals to trigger timer events such as start, stop, and reset.
+
+✨Seven-Segment Driver: Drives the seven-segment display to visualize timer output.
+
+✨Seven-Segment Signal: Generates refresh signals for the seven-segment display.
+
+✨Timer Signal: Provides timing signals for precise operation of the timer.
+
+✨Timer with Initialization: Implements countdown functionality and initialization of timer values.
+
+🗝️Input and Output Ports
+
+The HLS timer IP exposes the following input and output ports:
+
+✨Input Ports:
+
+ap_clk: Clock signal for the FPGA fabric.
+
+6-bit "minutes" switch: Input for setting timer values or configurations.
+
+start: Start signal to initiate timer operations.
+
+ap_rst: Reset signal to reset the timer and associated submodules.
+
+✨Output Ports:
+
+8-bit seven_segment_data: Data for driving the seven-segment display.
+
+4-bit seven_segment_enable: Enable signals for controlling segments of the seven-segment display.
+
+The FPGA-based HLS timer with initialization IP offers a versatile and efficient solution for implementing timer functionalities in FPGA-based systems. 
+
+Leveraging HLS methodology enables rapid development and optimization, while the modular design ensures scalability and ease of integration. With its robust features and customizable configurations, the HLS timer IP can be seamlessly integrated into various embedded systems, meeting diverse application requirements.
+
 ## High-Level Synthesis (HLS) Based Median Filter for FPGA Applications
 Median filtering is a powerful technique in digital signal processing used for noise reduction and image enhancement. In this report, we delve into the implementation of a median filter using High-Level Synthesis (HLS) targeting FPGA platforms. HLS offers a high-level abstraction for designing complex algorithms and accelerates development by automatically generating hardware descriptions from C/C++ code.
 
