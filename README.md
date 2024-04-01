@@ -43,6 +43,16 @@ ap_rst: Reset signal to reset the timer and associated submodules.
 The FPGA-based HLS timer with initialization IP offers a versatile and efficient solution for implementing timer functionalities in FPGA-based systems. 
 
 Leveraging HLS methodology enables rapid development and optimization, while the modular design ensures scalability and ease of integration. With its robust features and customizable configurations, the HLS timer IP can be seamlessly integrated into various embedded systems, meeting diverse application requirements.
+![Screenshot 2024-03-31 204721](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/8ed88c10-88ff-46e9-97fa-baabcdf62556)
+![Screenshot 2024-03-31 205313](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/e9afc0bc-363c-4d10-9ae4-22d2db19c6c1)
+![Screenshot 2024-03-31 203223](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/f27e0050-3e83-4cdd-a72c-3edd01734b16)
+![Screenshot 2024-03-31 194553](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/56de009d-2b09-44ae-a430-884e41aea885)
+![Screenshot 2024-03-31 194245](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/0ebe0f2f-f6b9-4374-a9e0-60c56ecdf479)
+![Screenshot 2024-03-31 193646](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/12f80666-463a-46a8-a7ea-a8450e419c38)
+![Screenshot 2024-03-31 114933](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/fa87e8ea-bbca-4818-b6e9-44119216d63e)
+![Screenshot 2024-03-31 115231](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/3afca4c9-01c0-49fb-acf4-6a98ad4de346)
+
+
 
 ## High-Level Synthesis (HLS) Based Median Filter for FPGA Applications
 Median filtering is a powerful technique in digital signal processing used for noise reduction and image enhancement. In this report, we delve into the implementation of a median filter using High-Level Synthesis (HLS) targeting FPGA platforms. HLS offers a high-level abstraction for designing complex algorithms and accelerates development by automatically generating hardware descriptions from C/C++ code.
