@@ -1,5 +1,34 @@
 # HLS-Project
 
+## FPGA-based HLS PMOD Keyboard IP Design
+
+1. Introduction
+FPGA-based PMOD keyboards are fundamental interfaces in embedded systems, enabling user input for a variety of applications. In this report, we present the design and implementation of an FPGA-based HLS PMOD Keyboard IP with two sub-modules: PMOD keyboard refresh and PMOD keyboard. This solution facilitates efficient interaction with external keyboards and provides robust functionality for FPGA-based systems.
+
+3. Design Overview
+The FPGA-based HLS PMOD Keyboard IP comprises two primary sub-modules:
+
+PMOD Keyboard Refresh: Generates refresh signals for scanning the keyboard matrix.
+PMOD Keyboard: Interfaces with the PMOD keyboard, scanning rows and detecting key presses.
+
+4. Input and Output Ports
+The HLS PMOD Keyboard IP exposes the following input and output ports:
+
+Input Ports:
+
+ap_clk: Clock signal for the FPGA fabric.
+4-bit pmod_row: Input for scanning rows of the PMOD keyboard matrix.
+ap_rst: Reset signal to initialize the IP.
+
+Output Ports:
+
+4-bit pmod_col: Output for detected columns of the PMOD keyboard matrix.
+8-bit seven_segment_data: Data for driving the seven-segment display.
+4-bit seven_segment_enable: Enable signals for controlling segments of the seven-segment display.
+
+5. Conclusion
+The FPGA-based HLS PMOD Keyboard IP offers a versatile and efficient solution for integrating PMOD keyboard functionality into FPGA-based systems. Leveraging HLS methodology enables rapid development and optimization, while the modular design ensures scalability and ease of integration. With its robust features and customizable configurations, the HLS PMOD Keyboard IP can be seamlessly integrated into various embedded systems, enhancing user interaction and expanding application possibilities.
+
 ## FPGA-based HLS Timer with Initialization IP Block Design
 
 FPGA-based timers are essential components in various embedded systems, facilitating timekeeping functionalities crucial for a wide range of applications. I recently designed and implemented an FPGA-based HLS timer with initialization IP for a complex DSP project developed using High-Level Synthesis (HLS) methodology.
