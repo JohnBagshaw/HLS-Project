@@ -22,21 +22,29 @@ Input Ports:
 
 ap_clk: Clock signal for the FPGA fabric.
 
-4-bit pmod_row: Input for scanning rows of the PMOD keyboard matrix.
+4-bit input_pmod_row: Input for scanning rows of the PMOD keyboard matrix.
 
 ap_rst: Reset signal to initialize the IP.
 
 Output Ports:
 
-4-bit pmod_col: Output for detected columns of the PMOD keyboard matrix.
+4-bit pmod_output_col: Output for detected columns of the PMOD keyboard matrix.
 
-8-bit seven_segment_data: Data for driving the seven-segment display.
+8-bit display_data: Data for driving the seven-segment display.
 
-4-bit seven_segment_enable: Enable signals for controlling segments of the seven-segment display.
+4-bit display_enable: Enable signals for controlling segments of the seven-segment display.
 
 5. Conclusion
    
 The FPGA-based HLS PMOD Keyboard IP offers a versatile and efficient solution for integrating PMOD keyboard functionality into FPGA-based systems. Leveraging HLS methodology enables rapid development and optimization, while the modular design ensures scalability and ease of integration. With its robust features and customizable configurations, the HLS PMOD Keyboard IP can be seamlessly integrated into various embedded systems, enhancing user interaction and expanding application possibilities.
+![Screenshot 2024-04-01 223941](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/0b2a7a59-cccd-4081-97cc-33d639c20cf1)
+
+![Screenshot 2024-04-01 223719](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/79df9054-a85f-4dbf-ae07-db871e98dd0d)
+
+![Screenshot 2024-04-01 212623](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/21fa5ef8-e20a-4327-b71d-9bb9b067f4b9)
+
+![Screenshot 2024-04-01 212013](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/f12bba50-9dbc-4fb4-a624-287c4d6d3fe9)
+![Screenshot 2024-04-01 204546](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/53e85983-200f-4bc4-8b7d-379cb9a0374e)
 
 ## FPGA-based HLS Timer with Initialization IP Block Design
 
