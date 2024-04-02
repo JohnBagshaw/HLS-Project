@@ -3,15 +3,18 @@
 ## FPGA-based HLS PMOD Keyboard IP Design
 
 1. Introduction
+   
 FPGA-based PMOD keyboards are fundamental interfaces in embedded systems, enabling user input for a variety of applications. In this report, we present the design and implementation of an FPGA-based HLS PMOD Keyboard IP with two sub-modules: PMOD keyboard refresh and PMOD keyboard. This solution facilitates efficient interaction with external keyboards and provides robust functionality for FPGA-based systems.
 
 3. Design Overview
+   
 The FPGA-based HLS PMOD Keyboard IP comprises two primary sub-modules:
 
 PMOD Keyboard Refresh: Generates refresh signals for scanning the keyboard matrix.
 PMOD Keyboard: Interfaces with the PMOD keyboard, scanning rows and detecting key presses.
 
 4. Input and Output Ports
+   
 The HLS PMOD Keyboard IP exposes the following input and output ports:
 
 Input Ports:
