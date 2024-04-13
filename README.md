@@ -1,5 +1,78 @@
 # HLS-Project
 
+## HLS-based Up-counter Streaming Module for FPGA Design
+
+
+
+In the ever-evolving field of digital electronics, FPGA stands as a beacon of adaptability and speed. Today, I'm excited to introduce a prime example of FPGA's capabilities – an up-counter streaming module designed for real-time interfacing utilizing FIFO generator with a seven-segment display.
+
+ 
+
+Design Overview:
+
+The design comprises an integrated system built on an FPGA platform, utilizing High-Level Synthesis (HLS) for rapid development and iteration. The main focus of the design is an up-counter module which is part of a larger system including a pulse generator, FIFO buffer, debouncer, and display drivers – to perform counting operations and display the results in real-time.
+
+
+
+Key Submodules:
+
+Pulse Generator: Initiates the counting sequence, providing a regular pulse stream to the up-counter.
+
+FIFO Generator: Manages the queuing of count values, ensuring a smooth and orderly data flow.
+
+Debouncer: Filters out any noise from the input buttons, ensuring accurate count increment triggers.
+
+Up-Counter: Lies at the heart of the design, incrementing the count in response to incoming pulses and managing the modulo operation for wrapping the count value.
+
+
+
+Inputs/Outputs:
+
+Inputs:
+
+clk_in: The main system clock that synchronizes the operation of all submodules.
+
+reset: Resets the system to a known state.
+
+4-bit sw: User input switches to specify the modulo value for the counter.
+
+up_count: The signal line carrying the current count value.
+
+
+
+Outputs:
+
+8-bit seven segment display (display_data): Drives the display segments to show the count.
+
+4-bit seven segment enable (display_enable): Controls which segments are activated on the display.
+
+
+
+Design Function:
+
+At its core, the up-counter module functions to increment a count value with each pulse received from the pulse generator. The count is presented through a seven-segment display, which is controlled by the output lines display_data and display_enable. The FIFO generator ensures that the count values are processed in the order they are received.
+
+
+
+Applications:
+
+This module is versatile and can be applied to a variety of scenarios, including but not limited to digital clocks, counters in consumer appliances, and educational tools for digital logic learning. Its real-time processing capability makes it suitable for applications where immediate feedback from user input is necessary.
+
+
+
+Conclusion:
+
+The HLS-based up-counter streaming module demonstrates how complex digital systems can be realized with reduced development times, facilitating innovation and creativity in digital design. This project is an enabler for engineers and developers to turn their digital concepts into real-world applications swiftly and effectively.
+![Screenshot 2024-04-13 105130](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/c035294b-67d2-4725-aa06-ae65091db4c0)
+
+![Screenshot 2024-04-12 235450](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/7ee0d394-f0c9-4702-83f5-7c4de3850391)
+![Screenshot 2024-04-12 235923](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/a8183a41-8196-4c29-8c8d-c070e02f298f)
+![Screenshot 2024-04-13 000020](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/f64fdc1b-5efc-4b84-854e-e81726884f1f)
+
+![Screenshot 2024-04-13 001557](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/5ea76b9e-d423-4a85-9683-a6eccf342f91)
+![Screenshot 2024-04-13 104043](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/5dcc33a2-18a5-47a0-986c-7fe0fadb19ae)
+
+
 ## FPGA-based HLS PMOD Keyboard IP Design
 
 1. Introduction
