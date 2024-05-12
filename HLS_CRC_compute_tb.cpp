@@ -1,3 +1,4 @@
+// By John Bagshaw
 #include <iostream>
 #include "HLS_CRC_compute.h"
 #include "hls_stream.h"
