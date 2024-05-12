@@ -1,3 +1,4 @@
+// By John Bagshaw
 #ifndef CRC_COMPUTE_H_
 #define CRC_COMPUTE_H_
 
