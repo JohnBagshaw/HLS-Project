@@ -1,8 +1,92 @@
 # HLS-Project
 
+## HLS-based CRC Computation Module
+
+The development, verification, and performance analysis of a High-Level Synthesis (HLS) based CRC (Cyclic Redundancy Check) computation module designed for FPGA implementation. The module is developed with a focus on pipelining to enhance throughput and efficiency and is designed to be compliant with the AXI4 streaming protocol.
+
+Introduction
+
+Cyclic Redundancy Check (CRC) is a popular method for detecting errors in digital data. It is widely used to ensure the integrity of data in digital networks and storage devices. CRC computation involves generating a short, fixed-size binary sequence, known as a checksum, for each block of data sent or stored. The checksum is calculated based on the polynomial division of the data's binary representation, and the same polynomial is used to verify the integrity of the data at the receiving end. If the receiving end re-computes the CRC and finds a different checksum, it indicates that the data has been altered.
+
+
+Significance and Applications
+
+CRCs are crucial in applications where data integrity is paramount, including in telecommunications, networking (Ethernet, WiFi), storage (hard disks, SSDs), and in the transport of data across susceptible channels. The simplicity and efficiency of CRC calculations make them particularly suited for hardware implementation, where speed and resource optimization are critical.
+
+Module Description
+
+Input Data Width: 32 bits
+
+CRC Polynomial Width: 6 bits
+
+Output CRC Width: 6 bits
+
+Interface: AXI4 Stream
+
+Pipeline Stages: Implemented with an initiation interval (II) of 1
+
+Inputs and Outputs
+
+Input Ports:
+
+data_in (32 bits): Receives the data block for which the CRC is to be computed.
+
+CRC_polynomial (6 bits): The polynomial used in the CRC computation, defining the error detection capabilities.
+
+clk (1 bit): Clock signal that synchronizes the data processing.
+
+reset (1 bit): Asynchronously resets the computation process.
+
+Output Ports:
+
+CRC_out (6 bits): Outputs the computed CRC value.
+
+valid_out (1 bit): Indicates the validity of the CRC output.
+
+ready_out (1 bit): Signals the readiness to send the CRC result.
+
+
+Design Implementation
+
+HLS Code Overview
+
+The design utilizes bitwise operations within a pipelined loop to enhance throughput and minimize latency. The core of the CRC computation handles data bit by bit, applying XOR operations based on the CRC polynomial.
+
+Pipelining Strategy
+
+The pipelining is designed to allow new iterations of the loop to begin every clock cycle, optimizing throughput and ensuring the module processes one input per clock cycle under optimal conditions.
+
+Simulation and Verification
+
+Simulation results indicate successful CRC computations for all test vectors, confirming the module's functionality and robustness.
+
+Performance Analysis
+
+The synthesized design shows a latency of 6 cycles per data packet, with high throughput capabilities evidenced by achieving the targeted initiation interval of 1.
+
+Synthesis Outcomes
+
+RTL synthesis confirms that the design meets the timing and resource criteria for the target FPGA architecture, verifying its readiness for production deployment.
+
+Future Recommendations
+
+Resource Optimization: Further reduce resource utilization by exploring more compact logic designs or alternative synthesis options.
+
+Error Handling Enhancements: Implement additional features for error signaling and correction to handle possible data transmission errors dynamically.
+
+Algorithmic Improvements: Consider exploring different CRC algorithms or configurable polynomial support to broaden the application scope and enhance error detection capabilities.
+
+Conclusion
+The HLS-based CRC module effectively meets specified functional and performance requirements, demonstrating efficient use of FPGA resources through advanced pipelining techniques. It is recommended for integration into larger systems where data integrity checks are essential, supporting critical applications across various industries.
+
+![Screenshot 2024-05-10 215345](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/9b89cba5-a149-4d61-b26c-5eb79f819daf)
+![Screenshot 2024-05-10 213951](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/ad24f8fe-9aee-4f1a-b7a3-f3038216807e)
+![Screenshot 2024-05-10 204828](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/f3bcb2bc-61d7-4b8a-8824-4a19c2f24162)
+![Screenshot 2024-05-10 204514](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/87f306ef-f8e4-4a5c-a72e-dd6850963d9b)
+![Screenshot 2024-05-10 204352](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/d21b8d5e-cb44-4ab6-b5f3-0cd925a85a0e)
+![Screenshot 2024-05-10 203418](https://github.com/JohnBagshaw/HLS-Project/assets/84130776/6abb43b4-67ca-41a0-a67e-11215094bbf9)
+
 ## HLS-based Up-counter Streaming Module for FPGA Design
-
-
 
 In the ever-evolving field of digital electronics, FPGA stands as a beacon of adaptability and speed. Today, I'm excited to introduce a prime example of FPGA's capabilities – an up-counter streaming module designed for real-time interfacing utilizing FIFO generator with a seven-segment display.
 
