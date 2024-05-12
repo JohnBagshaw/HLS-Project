@@ -1,3 +1,4 @@
+// By John Bagshaw
 #include "HLS_CRC_compute.h"
 
 void crc_compute(hls::stream<axi_interface>& input_stream, hls::stream<axi_interface>& output_stream, crc_t crc_poly) {
