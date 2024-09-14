@@ -6,10 +6,15 @@ This repository provides an FPGA-accelerated trading system utilizing HLS stream
 High-Frequency Trading (HFT) systems rely on executing trades in microseconds to gain profit margins on price discrepancies. This trading system implements Latency Arbitrage and Statistical Arbitrage strategies using FPGA-based acceleration via HLS (High-Level Synthesis). By taking advantage of FPGA's parallel processing capabilities, this system ensures low-latency execution for high-speed trading operations.
 
 Features
+
 Latency Arbitrage: Executes sell orders when market price falls below a defined threshold with sufficient volume.
+
 Statistical Arbitrage: Executes buy orders when market price exceeds a threshold and volume conditions are met.
+
 FPGA-Accelerated: Uses HLS streams for parallel processing to achieve ultra-low-latency performance.
+
 Configurable Strategies: Dynamically enable/disable arbitrage strategies using a control flag.
+
 Testbench: Includes a testbench to simulate and verify system functionality with predefined market data.
 
 System Architecture
@@ -35,15 +40,20 @@ Code Structure
 This file contains the implementation of the Latency Arbitrage and Statistical Arbitrage strategies, as well as the core trading_system function.
 
 latency_arbitrage: Generates a sell order if market data price is below a threshold.
+
 statistical_arbitrage: Generates a buy order if market data price exceeds a threshold.
+
 trading_system: Controls data flow and decision-making for both strategies, based on control flags.
 
 2. trading_system.h
 This header file defines the data structures and function prototypes used in the system, such as:
 
 market_data_t: Structure for market data (price and volume).
+
 order_t: Structure for buy/sell orders.
+
 order_type_t: Enum defining buy and sell order types.
+
 Function prototype for the trading_system.
 
 3. trading_system_TB.cpp
@@ -64,6 +74,12 @@ The statistical_arbitrage function checks if the incoming market data's price is
 
 3. Trading System Control
 The trading_system function manages both arbitrage strategies using a control flag ap_uint<2>. Each bit of the flag enables/disables a specific arbitrage strategy.
+![tradingsystemHLS1](https://github.com/user-attachments/assets/1af8b57c-ada7-4a0c-8d9b-7bc3af504274)
+
+![tradingsystemHLS7](https://github.com/user-attachments/assets/88bb3460-1a88-484d-bc7b-de88d4fe61a1)
+
+![tradingsystemHLS10](https://github.com/user-attachments/assets/bebf263e-1548-422d-bd01-53035b61f3b7)
+
 
 ## HLS-based CRC Computation Module
 
